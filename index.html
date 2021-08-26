@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>The band</title>
+    <link rel="icon" href="https://ih1.redbubble.net/image.1055910427.0335/st,small,507x507-pad,600x600,f8f8f8.jpg" type="image/x-icon"/>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
@@ -11,16 +12,16 @@
         <div id="header">
             <!-- Begin: navigation  -->
             <ul id="nav">
-                <li><a href="">Home</a></li>
-                <li><a href="">Band</a></li>
-                <li><a href="">Tour</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li>
                     <a href="">More <i class="fas fa-caret-down"></i></a>
                     <ul class="subnav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
                 </li>
             </ul>
@@ -32,9 +33,9 @@
             </div>
         </div>
 
+        <!-------- SLIDER -------->
         <div id="slider">
             <div class="text-content">
-                
                 <h2 class="text-heading">Chicago</h2>
                 <div class="text-description">
                     Thank you, Chicago - A night we won't forget.
@@ -44,7 +45,7 @@
 
         <div id="content">
             <!-- About content -->
-            <div class="about-content">
+            <div id="band" class="about-content">
                 <h2 class="title-content">The Band</h2>
                 <p class="icon-content">
                     <i>We love music</i>
@@ -80,7 +81,7 @@
             
             
              <!-- Tour content -->
-            <div class="tour-manage">
+            <div id="tour" class="tour-manage">
                 <div class="tour-in-content">
                     <h2 class="title-content">Tour dates</h2>
                     <p class="icon-content">
@@ -94,7 +95,7 @@
                             October <span class="book-soldout">Sold out</span>
                         </li>
                         <li class="book" >
-                            November
+                            November <p class="book-number">3</p>
                         </li>
                     </ul>
                     <div class="tour-content-img">
@@ -134,7 +135,7 @@
         
 
              <!-- Contact content  -->
-            <div class="about-content"> 
+            <div id="contact" class="about-content"> 
                 <h2 class="title-content">CONTACT</h2>
                 <p class="icon-content">
                     <i>Fan? Drop a note!</i>
@@ -150,14 +151,14 @@
                     </div>
 
                     <div class="contact-information">
-                        <form action="index.html" method="post">
+                        <form action="" method="post">
                             <div class="contact-name-email">
-                                <input class="import input" type="text" placeholder="Name">
+                                <input class="import" type="text" required placeholder="Name">
                             </div>
                             <div class="contact-name-email">
-                                <input class="import input" type="text" placeholder="Email"> 
+                                <input class="import" type="text" required placeholder="Email"> 
                             </div>
-                            <input class="import-Message input" type="text" name="" placeholder="Message"> <br>
+                            <input class="import-Message input" type="text" required name="" placeholder="Message"> <br>
                             <button class="sub-send" type="submit">SEND</button>
                         </form>
                     </div>
@@ -171,15 +172,15 @@
         <div class="Map">
             <img src="./assets/css/img/Slider/map.png" alt="Map">
         </div>
+
+
         <div id="footer">
             <div class="footer-icons-link">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-invision"></i>
+                <a href="facebook.com"><i class="fab fa-facebook-square"></i></a>
+                <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="invision.com"><i class="fab fa-invision"></i></a>
                 <p class="link">
-                    
-
                     Prower by <a class="link" href="w3.css">w3.css</a> 
                 </p>  
             </div>
