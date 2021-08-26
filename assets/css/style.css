@@ -111,7 +111,7 @@ html{
 
 #slider .text-content{
     position: absolute;
-    color: white;
+    color: white; 
     bottom: 47px;
     width: 100%;
     /* left: 50%;
