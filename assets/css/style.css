@@ -106,7 +106,7 @@ html{
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('./img/') top center / cover no-repeat;
+    background: url('./img/slider1.png') top center / cover no-repeat;
 }
 
 #slider .text-content{
