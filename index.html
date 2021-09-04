@@ -5,10 +5,12 @@
     <title>The band</title>
     <link rel="icon" href="https://ih1.redbubble.net/image.1055910427.0335/st,small,507x507-pad,600x600,f8f8f8.jpg" type="image/x-icon"/>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
     <div id="main">
+        <!-------- HEADER -------->
         <div id="header">
             <!-- Begin: navigation  -->
             <ul id="nav">
@@ -43,6 +45,7 @@
             </div>
         </div>
 
+        <!-------- CONTENT -------->
         <div id="content">
             <!-- About content -->
             <div id="band" class="about-content">
@@ -105,7 +108,7 @@
                                 <h3 class="tour-name">Paris</h3>
                                 <p class="content-day">Fri 27 Nov 2016</p>
                                 <p class="content-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>   
-                                <a  class="buy-ticket">Buy Ticket</a>
+                                <button  class="buy-ticket js-BuyTicket">Buy Ticket</button>
                             </div>
                         </div>
                         <div class="content-img">
@@ -115,7 +118,7 @@
                                 <p class="content-day">Sat 28 Nov 2016</p>
                                 <p class="content-description">Praesent tincidunt sed tellus ut rutrum 
                                     sed vitae justo.</p>   
-                                <a class="buy-ticket">Buy Ticket</a> 
+                                <button class="buy-ticket js-BuyTicket">Buy Ticket</button> 
                             </div>
                         </div> 
                         <div class="content-img">
@@ -124,7 +127,7 @@
                                 <h3 class="tour-name">San Francisco</h3>
                                 <p class="content-day">Sun 29 Nov 2016</p>
                                 <p class="content-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>   
-                                <a  class="buy-ticket">Buy Ticket</a>  
+                                <button  class="buy-ticket js-BuyTicket">Buy Ticket</button>  
                             </div>
                             
                         </div>
@@ -159,7 +162,7 @@
                                 <input class="import" type="text" required placeholder="Email"> 
                             </div>
                             <input class="import-Message input" type="text" required name="" placeholder="Message"> <br>
-                            <button class="sub-send" type="submit">SEND</button>
+                            <button class="sub-send js-sub-send" type="submit">SEND</button>
                         </form>
                     </div>
 
@@ -168,12 +171,13 @@
             </div>   
         
         </div>
-        <!-- Map -->
+
+        <!-------- MAP -------->
         <div class="Map">
             <img src="./assets/css/img/Slider/map.png" alt="Map">
         </div>
 
-
+        <!-------- FOOTER -------->
         <div id="footer">
             <div class="footer-icons-link">
                 <a href="facebook.com"><i class="fab fa-facebook-square"></i></a>
@@ -189,6 +193,99 @@
 
     </div>
     
-    
+        <!-------- MODAL -------->
+    <div class="modal js-modal">
+        <div class="modal-container js-m-container">
+            <div class="m-close js-m-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="m-container-header">
+                <div class="m-tile-ticket">
+                    <i class="fas fa-suitcase"></i>
+                    Tickets
+                </div>
+            </div>
+
+            <div class="m-container-body">
+                <label for="focus-in-howmany" class="m-label">
+                    <i class="fas fa-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input id="focus-in-howmany" type="text" class="m-input" placeholder="How many?"> <br>
+                
+                <label for="email" class="m-label">
+                    <i class="fas fa-user"></i>
+                    Send To
+                </label>
+                <input id="email" type="text" class="m-input" placeholder="Enter email">
+                <button class="m-button-pay" type="submit">PAY <i class="fas fa-check"></i></button>
+                <button class="m-button-close" type="submit">Close <i class="fas fa-times"></i></button>
+                <div class="footer">
+                    <p class="footer-content">Need <a class="footer-content-color" href="">help?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const buyBtns = document.querySelectorAll('.js-BuyTicket')
+        const modal = document.querySelector('.js-modal')
+        const modalClose = document.querySelector('.js-m-close')
+        const modalContainer = document.querySelector('.js-m-container')
+
+        //1 hàm hiển thị modal mua vé (thêm class open vào modal(thêm ở css))
+        function showBuyTickets(){
+            modal.classList.add('open')
+        }
+        //1 lặp qua từng thẻ button và nghe hành vi click
+        for(const buyBtn of buyBtns){
+            buyBtn.addEventListener('click', showBuyTickets)
+        }
+
+        //2 hàm ẩn modal mua vé (gỡ bỏ class open của modal)
+        function hideBuyTickets(){
+            modal.classList.remove('open')
+        }
+        //2 lắng nghe click để tắt modal
+        modalClose.addEventListener('click', hideBuyTickets)
+
+        //3 lắng nghe click để khi bấm ra ngoài khung BuyTicket sẽ tự động tắt
+        modal.addEventListener('click', hideBuyTickets)
+        //3 lắng nghe và chống nổi bọt, tức là khi bấm vào BuyTicket cũng sẽ tắt 
+        //nhưng hàm này giúp khi bấm vào BuyTicket ko tắt
+        modalContainer.addEventListener('click', function (event){
+            event.stopPropagation()
+        } )
+    </script>
+
+        <!-------- MODAL SEND -------->
+    <div class="modalSend js-modalSend">
+        <div class="modalSend-content">
+            <i class="fas fa-check-circle"> Đã gửi thành công 
+            </i>
+        </div>
+    </div>
+
+    <script>
+        const modalSend = document.querySelector('.js-modalSend')
+        const btn = document.querySelector('.js-sub-send')
+
+        //hàm lắng nghe và mở
+        function openSend(){
+            modalSend.classList.add('open')
+        }
+        btn.addEventListener('click', openSend)
+
+        //hàm lắng nghe và đóng
+        function closeSend(){
+            modalSend.classList.remove('open')
+        }
+        modalSend.addEventListener('click', closeSend)
+        //click ra bên ngoài khung sẽ tự tắt và bấm vào bên trong ko mất
+        modalSend.addEventListener('click', function (event){
+            event.stopPropagation()
+        })
+
+    </script>
 </body>
 </html>
